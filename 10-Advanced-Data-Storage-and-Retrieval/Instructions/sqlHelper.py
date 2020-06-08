@@ -6,23 +6,24 @@ from sqlalchemy import create_engine
 class SQLHelper():
 
     def __init__(self):
-        self.connection_string = "sqlite:///hawaii.sqlite"
+        self.connection_string = "sqlite:///Resources/hawaii.sqlite"
         self.engine = create_engine(self.connection_string)
     
     def getAllRows(self):
         query = f"""
-            SELECT
-                s.id,
-                s.station,
-                s.name,
-                s.elevation,
-                m.date,
-                m.prcp,
-                m.tobs
-            FROM
-                measurement m
-            JOIN station s ON s.station = m.station
-            """
+                    SELECT
+                        s.id,
+                        s.station,
+                        s.name,
+                        s.elevation,
+                        m.date,
+                        m.prcp,
+                        m.tobs
+                    FROM
+                        measurement m
+                    JOIN station s ON s.station = m.station
+                """
+
         conn = self.engine.connect()
         df = pd.read_sql(query, conn)
         conn.close()
@@ -37,6 +38,7 @@ class SQLHelper():
             FROM
                 measurement
             """
+        
         conn = self.engine.connect()
         df = pd.read_sql(query, conn)
         conn.close()
@@ -87,7 +89,7 @@ class SQLHelper():
             FROM
                 measurement
             WHERE
-                date >= '2010-01-01'
+                date >= "2010-01-01"
             """
 
         conn = self.engine.connect()

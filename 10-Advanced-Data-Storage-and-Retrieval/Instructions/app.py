@@ -20,16 +20,16 @@ def home():
             <li><a target="_blank" href='/precipitation'>Precipitation</a></li>
             <li><a target="_blank" href='/stations'>Stations</a></li>
             <li><a target="_blank" href='/tobs'>Most active station for the last year</a></li>
-            <li>Max, Min & Avg Temperature
-             <li style="margin-left:2em"> <a target="_blank" href='/start'>From first day</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2010-01-01/2010-12-31'>From 2010</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2011-01-01/2011-12-31'>From 2011</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2012-01-01/2012-12-31'>From 2012</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2013-01-01/2013-12-31'>From 2013</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2014-01-01/2014-12-31'>From 2014</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2015-01-01/2015-12-31'>From 2015</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2016-01-01/2016-12-31'>From 2016</a></li>
-             <li style="margin-left:2em"> <a target="_blank" href='/range/2017-01-01/2017-12-31'>From 2017</a></li>
+            <li>Max, Min & Avg Temperature from:
+             <li style="margin-left:2em"> <a target="_blank" href='/start'>First day</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2010-01-01/2010-12-31'>2010</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2011-01-01/2011-12-31'>2011</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2012-01-01/2012-12-31'>2012</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2013-01-01/2013-12-31'>2013</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2014-01-01/2014-12-31'>2014</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2015-01-01/2015-12-31'>2015</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2016-01-01/2016-12-31'>2016</a></li>
+             <li style="margin-left:2em"> <a target="_blank" href='/range/2017-01-01/2017-12-31'>2017</a></li>
         """
     )
 
