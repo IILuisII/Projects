@@ -34,9 +34,11 @@ class SQLHelper():
         query = f"""
             SELECT
                 date as "Date",
-                prcp as "Precipitation"
+                SUM(prcp) as "Precipitation"
             FROM
                 measurement
+            GROUP BY
+                date
             """
         
         conn = self.engine.connect()
@@ -48,7 +50,11 @@ class SQLHelper():
     def getStations(self):
         query = f"""
             SELECT
-               station as "Station"
+               station as "Station",
+               name as Name,
+               latitude,
+               longitude,
+               elevation
             FROM
                 station
             """
@@ -80,7 +86,7 @@ class SQLHelper():
 
         return df
 
-    def start(self):
+    def start(self, date):
         query = f"""
             SELECT
                 MIN(tobs) as Minimum_Temperature,
@@ -89,7 +95,7 @@ class SQLHelper():
             FROM
                 measurement
             WHERE
-                date >= "2010-01-01"
+                date >= "{date}"
             """
 
         conn = self.engine.connect()
