@@ -1,0 +1,55 @@
+.logo {
+    width: 80px;
+    height: 70px;
+}
+
+.navbar-custom {
+    background-color: #49657b;
+}
+
+.image_inline {
+    width: 100%;
+}
+
+.image_fit {
+    height: fit-content;
+}
+
+.fix {
+    object-position: center;
+}
+
+.footer_override {
+    margin: 0px;
+    text-align: center;
+}
+
+.subtitle {
+    font-style: cursive;
+    text-align: left;
+    font-weight: bold;
+}
+
+.image_clickable {
+    cursor: pointer;
+}
+
+.navigation {
+    background-color: chocolate;
+}
+
+.weather {
+    width: 100px;
+    height: 100px;
+}
+
+.borderimg {
+    border-radius: 8px;
+}
+
+.img {
+    border: 1px solid chocolate;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}

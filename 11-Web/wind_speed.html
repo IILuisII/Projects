@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Max Temperature</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom" style="margin-bottom: 20px;">
+        <a class="navbar-brand" href="index.html"><img class="logo" src="Instructions\Resources\assets\images\logo.png" height=50 width=50></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home  <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="comparasion.html">Comparisons</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+                <li class="nav-item dropdown show">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="visualizations.html" role="button" aria-haspopup="true" aria-expanded="true">Visualizations</a>
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <a class="dropdown-item" href="max_temp.html">Temperature</a>
+                        <a class="dropdown-item" href="humidity.html">Humidity</a>
+                        <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                        <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card border-primary mb-3">
+                    <div class="card-header">
+                        <h2>Wind Speed</h2>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title"></h4>
+                        <img src="Instructions\Resources\assets\images\Fig4.png">
+                        <p class=" card-text ">There is no obvious dependence of wind speed on latitude. The wind speed in general is from 0 mph to 15 mph..
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <div class="card border-primary mb-3 ">
+                    <div class="card-header ">
+                        <h2>Visualizations</h2>
+                    </div>
+                    <div class="card-body ">
+                        <div class="container-fluid ">
+                            <div class="row ">
+                                <div class="col-md-6 col-sm-6 ">
+                                    <a href="max_temp.html">
+                                        <img class="borderimg image_inline image_clickable " src="Instructions\Resources\assets\images\Fig1.png ">
+                                    </a>
+                                    <p class="subtitle ">Temperature</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <a href="humidity.html ">
+                                        <img class="borderimg image_inline image_clickable " src="Instructions\Resources\assets\images\Fig2.png ">
+                                    </a>
+                                    <p class="subtitle ">Humidity</p>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 col-sm-6 ">
+                                    <a href="cloudiness.html ">
+                                        <img class="borderimg borderimg image_inline image_clickable " src="Instructions\Resources\assets\images\Fig3.png ">
+                                    </a>
+                                    <p class="subtitle ">Cloudiness</p>
+                                </div>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <a href="wind_speed.html ">
+                                        <img class="borderimg img image_inline image_clickable " src="Instructions\Resources\assets\images\Fig4.png ">
+                                    </a>
+                                    <p class="subtitle ">Weend Speed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <footer class="footer ">
+        <div class="alert alert-light footer_override ">
+            <span>Web Design Homework - Web Visualization Dashboard. Luis Cerrilla. </span>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
