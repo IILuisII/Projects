@@ -9,11 +9,12 @@ import json
 def scrape_all():
     #Setup
     executable_path = {'executable_path': r"C:\Users\Maxi\Desktop\chromedriver_win32\chromedriver.exe"}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
     
     url = 'https://mars.nasa.gov/news/'
     browser.visit(url)
-    
+    time.sleep(10)
+
     html = browser.html
     soup = BeautifulSoup(html, "lxml")
     
