@@ -13,7 +13,7 @@ def index():
 @app.route("/scrape")
 def scrape():
     mars_app = mongo.db.mars
-    mars = scrape_mars.scrape_all()
+    mars = scrape_mars.scrape_mars()
     mars_app.update_many(
         {'active': 1},
         {"$set": {'active': 0}

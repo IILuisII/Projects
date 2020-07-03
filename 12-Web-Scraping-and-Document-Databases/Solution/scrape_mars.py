@@ -6,14 +6,33 @@ import time
 import re
 import json
 
-def scrape_all():
+def scrape_images(html_text):
+
+    hemi_soup = BeautifulSoup(html_text, "html.parser")
+
+    try:
+        title_elem = hemi_soup.find("h2", class_="title").get_text()
+        image_elem = hemi_soup.find("a", text="Sample").get("href")
+
+    except AttributeError:
+        title_elem = None
+        image_elem = None
+
+    hemisphere = {
+        "title": title_elem,
+        "img_url": image_elem
+    }
+
+    return hemisphere
+
+def scrape_mars():
     #Setup
     executable_path = {'executable_path': r"C:\Users\Maxi\Desktop\chromedriver_win32\chromedriver.exe"}
-    browser = Browser('chrome', **executable_path, headless=True)
+    browser = Browser('chrome', **executable_path, headless=False)
     
     url = 'https://mars.nasa.gov/news/'
     browser.visit(url)
-    time.sleep(10)
+    time.sleep(5)
 
     html = browser.html
     soup = BeautifulSoup(html, "lxml")
@@ -76,6 +95,20 @@ def scrape_all():
     data_html = stats.to_html(index=True)
     data_stats = json.loads(stats.to_json(orient="records"))
     
+    # Mars Hemispheres
+    url = (
+        "https://astrogeology.usgs.gov/search/"
+        "results?q=hemisphere+enhanced&k1=target&v1=Mars"
+    )
+    browser.visit(url)
+    html = browser.html
+
+    hemisphere_url = []
+    for i in range(4):
+        browser.find_by_css("a.product-item h3")[i].click()
+        hemi_data = scrape_images(browser.html)
+        hemisphere_url.append(hemi_data)
+        browser.back()
     browser.quit()
     
     # Dictionary
@@ -88,6 +121,7 @@ def scrape_all():
         "tweetWeather": tweeterText,
         "marsStatsHTML": data_html,
         "marsStats": data_stats,
+        "hemisphere_images": hemisphere_url,
         "active": 1,
         "dateScraped": datetime.datetime.now()
     }
@@ -96,4 +130,4 @@ def scrape_all():
 
 if __name__ == "__main__":
 
-    print(scrape_all())
+    print(scrape_mars())
