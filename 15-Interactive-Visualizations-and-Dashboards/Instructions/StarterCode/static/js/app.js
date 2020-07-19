@@ -66,21 +66,21 @@ function loadBar(id) {
     });
 }
 
-function makeBubblePlot(id) {
+function loadBubble(id) {
     $.ajax({
         type: 'GET',
         url: "samples.json",
         contentType: 'application/json;charset=UTF-8',
         success: function(data) {
-            let sampleData = data["samples"].filter(x => x.id == id)[0];
+            let sample = data["samples"].filter(x => x.id == id)[0];
 
             var trace1 = {
-                x: sampleData["otu_ids"],
-                y: sampleData["sample_values"],
+                x: sample["otu_ids"],
+                y: sample["sample_values"],
                 mode: 'markers',
                 marker: {
-                    size: sampleData["sample_values"].map(x => x * 0.75),
-                    color: sampleData["otu_ids"],
+                    size: sample["sample_values"].map(x => x * 0.75),
+                    color: sample["otu_ids"],
                     colorscale: "Greens"
                 }
             };
@@ -97,7 +97,7 @@ function makeBubblePlot(id) {
     });
 }
 
-function makeGaugePlot(id) {
+function loadGauge(id) {
     $.ajax({
         type: 'GET',
         url: "samples.json",
@@ -133,6 +133,6 @@ function makeGaugePlot(id) {
 function optionChanged(id) {
     demographicInfo(id);
     loadBar(id);
-    makeBubblePlot(id);
-    makeGaugePlot(id);
+    loadBubble(id);
+    loadGauge(id);
 }
