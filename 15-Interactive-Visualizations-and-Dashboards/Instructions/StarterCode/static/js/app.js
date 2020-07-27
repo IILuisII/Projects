@@ -136,3 +136,5 @@ function optionChanged(id) {
     loadBubble(id);
     loadGauge(id);
 }
+
+console.log(data)
