@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Earthquakes</title>
+
+    <!-- Marker Cluster CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+    <!-- Bootswatch -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/united/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" crossorigin="" />
+
+    <!-- Extra Markers Plugin -->
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="static/css/leaflet.extra-markers.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <!-- Full Screen Plugin-->
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
+
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" crossorigin=""></script>
+    <!-- d3 JS -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- Marker Cluster JS -->
+    <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <!-- Leaflet heatmap plugin-->
+    <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
+
+    <!-- Full Screen Plugin-->
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+
+    <!-- Extra Markers Plugin -->
+    <script src="static/js/leaflet.extra-markers.min.js"></script>
+
+    <script type="text/javascript" src="static/js/bouncemarker.js"></script>
+
+    <!-- Our JS -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+    <script type="text/javascript" src="static/js/logic.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" id="vizTitle">Earthquakes In the Last Week</a></nav>
+    <div class="card container-fluid col-md-12" style="margin-top:25px; margin-bottom: 25px;">
+
+        <div class="card border-primary col-md-2" style="text-align: left;zoom:1.75; font-size: x-small;">
+            <label for="timeFilter">Earthquakes in the:</label>
+            <select id="timeFilter" name="timeFilter">
+                <option value="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson">Last Hour</option>
+                <option value="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson">Last Day</option>
+                <option value="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson" selected>Last Week</option>
+                <option value="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson">Last Month</option>
+            </select>
+            <br>
+            <label for="magFilter">Magnitude:</label>
+            <select id="magFilter" name="magFilter">
+                <option value="-1" selected>All</option>
+                <option value="5">5 or Higher</option>
+                <option value="4">4 or Higher</option>
+                <option value="3">3 or Higher</option>
+                <option value="2">2 or Higher</option>
+                <option value="1">1 or Higher</option>
+            </select>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="card border-primary col-md-2" style="position: static; font-size: small">
+            <p>An earthquake is the result of a sudden release of stored energy in the Earth's crust that creates seismic waves. Earthquakes are accordingly measured seismograph. The magnitude of an earthquake is conventionally reported using the Richter
+                scale or a related Moment scale (with magnitude 3 or lower earthquakes being hard to notice and magnitude 7 causing serious damage over large areas).</p>
+            <p>At the Earth's surface, earthquakes may manifest themselves by a shaking or displacement of the ground.</p>
+        </div>
+        <br>
+        <div id="mapParent" class="container-fluid col-md-10"></div>
+
+        <footer id="footer">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" style="bottom: 100%;">Luis Cerrilla ---  Leaflet Homework - Visualizing Data with Leaflet</a>
+            </nav>
+
+    </div>
+</body>
+
+</html>

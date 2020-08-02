@@ -1,0 +1,31 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#map {
+    left: 180px;
+    bottom: 520px;
+}
+
+.paragraph {
+    position: relative;
+    background: orange;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 80px;
+    bottom: -50px;
+}
+
+#footer {
+    position: absolute;
+    bottom: -.0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+#footer-content {
+    height: 32px;
+    padding: 8px;
+}
